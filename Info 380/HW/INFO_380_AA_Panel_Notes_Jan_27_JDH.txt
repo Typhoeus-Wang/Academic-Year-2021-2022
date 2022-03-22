@@ -1,0 +1,117 @@
+1) Did you feel you were utilizing your alumni network and did it benefit you?
+- Reached out to alumni office and alumni was welcoming to help with networking
+- The access of resources seemed pretty good for those who used them
+	- Having graduated, you can send employees to iSchool and there are many alumni eager talking to iSchool students
+- Alumni network gave a sense of home otuside of home, extra sense of community
+
+2) What do you look for in alumni to hire for the company?
+- Flexible and adaptability, looking for commitment instead of just one job
+- Eager to mentor and help current students in career opportunities
+- Smart and capable on theory, understanding the business and working on something they are excited about
+	- Too much emphasis on technical skills to do job well
+	- Better to know and understand, be passionate about information theory
+	- Take every chance to do capstones and projects, industry-related projects and find something excited to talk about
+	- Genuine interest in work, getting better and better
+- Engage in your own network, "get in the door," being in alumni network lets you be that person with a developed background for organizations
+
+3) Can you describe how you connected with another alumni networker? What did you do and how did you feel?
+- Made friends in grad school, "on my own" actions, informal networking
+	- Look for alumni or students that have similar interests or skills to work with 
+- Missing component to have more formalized chances to meet with people
+
+4) Biggest pain points of conencting with students or alumni in general?
+- Pandemic gives a layer of awkwardness and difficulty, needs innovation to connect
+	- Undergraduates and graduates know how each other are feeling as students, alumni have to understand that students' lives are slightly more busy now than before
+	- Lowering the bar of initiating that engagement, best way is to get started
+- Hard to get data of the alumni and student info, hard to track that over years and even decades
+	- Alumnis can be those who graduated 1-2 years ago, 5-10 years ago, etc. (e.g. guest lectures, board directors, etc.)
+- All of the alumni systems is based on voluntarily input on alumni going into the system and updating it
+	- Alumni data integration and maintainence
+- Linked is best resource for alumni groups, gets updated by its users
+
+5) What is a good way to develop and maintain a relationship with an alumni?
+- Reaching out to alumni in some way (generalyl pretty open to share info and work with current students), having the initial outreach
+	- Steps to "catch up" over coffee, low-stress environment and value their opinion to ask about their work
+	- Never directly ask for bold tasks, do small simple steps (avoid transactional interactions)
+- Think about how to catalog skills to faciliate connections in the alumni network
+	- People are busy, but keep timeframes in mind when working
+
+6) What might keep alumni from using a system to connect with students?
+- Access: Logging in can take 15 minutes and did not fulfill their needs to access the system
+	- Efficiency
+	- Find ways to incentivize, keep it simple: notification texts, perks, invitation to events
+- Once you're in, find ways to connect with affinity groups instead of everybody
+
+7) How did you start professional networking?
+- Build your LinkedIn profile past your circles, past 500 connections
+
+8) What problems does the old alumni system have?
+- Oracle-bae dplatform, bad UX
+- Have a system be tailored to your experience
+- Think of who is building and using it
+
+9) What's on your end as alumni, to help connect with students?
+- People who genuinely want to help out and make connections, get people working on a place
+	- Filling in roles and positions for companies and organizations
+	- Helps with recommendations and is flattering as students
+- Making sure community is being supported and represented, protect them in order to succeed
+
+10) Pros and cons of using media or platforms (e.g. LinkedIn, Handshake) to connect with students?
+- Serious discussion on what is appropriate to add into the system
+	- Data being used and accessed by who?
+- Purchased scraped LinkedIn data, capturing information from people's reports
+- Vendor-based systems and information systems that enable sharing
+	- Integrating university systems (e.g. registrar data, degree information, museums, athletics)
+- LinkedIn have offerings for university and faculty members
+	- Career offices tap into these resources
+	- Can reach out to users (no need to share address and other personal details)
+
+11) Challenges with data management, what data is most important to design a management system inside the alumni system?
+- Establishing vocabulary to describe their jobs and their work (e.g. What is a program manager? Admin-level versus high level)
+	- Adequately describe their study, what level or proficiency
+
+12) What features does LinkedIn lack that the alumni system can use?
+- Tagging or cataloging interests or organizations
+- How much time do people have on their hands?
+- Rate the experience with someone
+
+13) What are the perspectives in using the alumni system? Who are they looking at, other alumni or currents?
+- Mentoring current students and get them out-of-school experiences/careers
+- Connecting with others in the work force, looking at different jobs or opportunities
+	- Broadening the groups of people you talk to
+- Looking for students who are looking for internships and have time to do so
+	- Find reliable users
+
+14) Power level users (e.g. deans, program chairs) to understand career paths and mobility, what information gaps are there in the alumni system?
+- Reports available of student data
+	- Type of occupation, career, companies worked at
+	- Always look for a better process in making the report, make it flexible and extensible
+- Has to integrate with other systems with data warehouses to provide snapshots
+	- Be mindful of constraints
+- Consider different perspective levels of what is being processed
+	- Big-story versus itty-gritty details
+
+15) Do you feel that the alumni system cater to a wide variety of students, do you see diversity within the people you work with or does the system not get enough exposure?
+- Recent graduate has different set of goals compared to those already in the workforce
+	- Different user types
+
+16) Is there any amount of money or planned budget used for the alumni networking system?
+- In a university setting, not a lot can be used for sponsored project
+	- Have to make a case with a value
+	- Increased awareness and attention in initiative
+	- Latch on to existing systems and partners 
+
+Contact Info:
+Anouska Eapen - iAffiliates GA
+Michael Visaya (Assistant Vice President Information Management @ UW) -
+Kent Foster (Director of University Relationships @ Microsoft) - https://www.linkedin.com/in/kentfoster/
+James Perez (Associate Director @ iSchool Corporate & Foundation Relations) - https://www.linkedin.com/in/jamesjgperez/ or jamesjp@uw.edu
+Richard Sturman (Director @ iSchool Affiliates Program) - https://www.linkedin.com/in/richardsturman/
+ 
+Links: 
+Program Manager – Full Time Application - https://careers.microsoft.com/us/en/job/1085297/Program-Management-Full-time-Opportunities-for-University-Graduates 
+User Experience – Summer Internship Application https://careers.microsoft.com/students/us/en/job/1124353/User-Experience-Intern-Opportunities (Note - UX Design role REQUIRES online design portfolio link to be listed on resume)
+
+Questions:
+Outside of the alumni system, was there alternative methods you used to network or better your job searching process?
+Do you feel that alumni-student connections are personalized enough with their experiences or is it hard to find people in your affinity group?
