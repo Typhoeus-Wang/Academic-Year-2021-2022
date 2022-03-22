@@ -1,0 +1,26 @@
+(a) 
+    R(A, B, C, D, E), D -> B, CE -> A
+
+    1) Decompose R into R1(D, B) and R2(A, C, D, E) because D is not a trivial dependency
+        and is not a superkey.
+    2) Decompose R2 into R3(A, C, E) and R4(C, D, E) because CE's closure is {C, E, A}.
+
+    R1(D, B), R3(A, C, E), and R4(C, D, E) are the final decomposition and are in BCNF.
+
+(b)
+    S(A, B, C, D, E), A -> E, BC -> A, DE -> B
+
+    1) Decompose S into S1(A, E) and S2(A, B, C, D) because A is not a trivial dependency
+        and is not a superkey.
+    2) Decompose S2 into S3(B, C, A) and S4(B, C, D) because closure of BC is not the whole 
+        set.
+    S1(A, E), and S3(B, C, A), and S4(B, C, D) are the final decomposition and are in BCNF.
+
+(c)
+    The consistent set of fd's is the empty set {}.
+
+(d)
+    A -> BC, C -> D
+
+(e) 
+    C -> B, B -> C, C -> ABD, D -> ABC

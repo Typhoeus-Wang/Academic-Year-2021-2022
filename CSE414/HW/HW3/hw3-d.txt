@@ -1,0 +1,4 @@
+My overall experience of using Microsoft Azure is not bad. It is powerful tool to create database and maintain it
+and we could easily access to the data which means we do not need to store data locally.
+However, the speed is a little slow compared with sqlite3 I used on mac and the process of
+importing data is kind of complicated.
