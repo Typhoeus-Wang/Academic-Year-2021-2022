@@ -1,0 +1,144 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\addtolength{\textwidth}{4cm}
+\addtolength{\textheight}{3cm}
+\addtolength{\oddsidemargin}{-2cm}
+\addtolength{\evensidemargin}{-2cm}
+\addtolength{\topmargin}{-2cm}
+\setlength{\parskip}{1ex}
+\setlength{\parindent}{0ex}
+
+\newcommand{\comment}[1]{}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\beqa}{\begin{eqnarray}}
+\newcommand{\eeqa}{\end{eqnarray}}
+\newenvironment{itemize*}{\begin{itemize}
+    \setlength{\topsep}{0ex}
+    \setlength{\parskip}{0ex}
+    \setlength{\partopsep}{-1ex}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parsep}{0ex}}
+{\end{itemize}}
+\newcommand{\bit}{\begin{itemize*}}
+\newcommand{\eit}{\end{itemize*}}
+\newcommand{\benum}{\begin{enumerate}}
+\newcommand{\eenum}{\end{enumerate}}
+
+\newcommand {\argmax}[2]{\mbox{\raisebox{-1.7ex}{$\stackrel{\textstyle
+ {\rm #1}}{\scriptstyle #2}$}}\,}
+\newcommand{\nchoosek}[2]{\left(\!\!\!\!\begin{array}{c}#1\\#2\end{array}\!\!\!\!\right)}
+\newcommand{\enumint}[2]{#1,\,\ldots \, #2 }
+\newcommand{\enuminti}{i\,=\,\enumint{0}{m-1}}
+\newcommand{\dataset}{{\cal D}}
+\newcommand{\fracpartial}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\tilp}{\tilde{P}}
+\newcommand{\tiltt}{\tilde{\theta}}
+\newcommand{\ML}{^{ML}}
+
+\begin{document}
+\begin{Large}
+\centerline{STAT 391} 
+\centerline{Homework 3}  % homework number here
+\centerline{Out April 19, 2022}      %due date here
+\centerline{Due April 26, 2022}      %due date here
+\end{Large}
+
+\centerline{\large \copyright Marina Meil\u{a}}
+\centerline{\large mmp@cs.washington.edu}
+
+\newcommand{\test}{_{test}}
+\newcommand{\ssss}{_{1,2,3,10,100}}  % set of j's to print
+\vspace{2em}
+
+
+%% to upload for this  problem
+%% -- training and test data
+%% -- example csv file
+%% -- script that reads csv file (script does not detect errors in counting, e.g. k*, m, n)
+
+{\bf Problem 1 -- Estimation of small probabilities}
+\\
+In this problem  you will use Maximum Likelihood estimation and the
+smoothing methods from Lecture III and {\tt l6-apr14, l7-apr19} to estimate probabilities for rare outcomes. 
+
+The data sets synth-train.dat \& synth-test.dat, are sampled i.i.d. from a synthetic distribution, while small-prob-train.dat \& small-prob-test.dat are sampled from a distribution of Chinese characters.  The data sets are summarized below, where $m,n,r$ have the same meaning as in the lectures, and $n\test$ is the size of a test set from the same distribution as the training data. Solve the questions below for each of the two distributions.
+
+\begin{tabular}{llllllll}
+  Data set &  $m$ &  training set & $n$ &  $r=m-r_0$ &  test set & $n\test$ & output file\\
+  \hline
+Simple synthetic & 100 & synth-train & 100 & 16 & synth-test & 1000 &hw3-myanswers-synth.csv\\
+Chinese characters & 9983 & small-prob-train & 1000 & 523 & small-prob-test & 10000 &hw3-myanswers-cc.csv\\
+\hline
+\end{tabular}
+
+{\em Submit the code used for this problem through Canvas. Also submit your numerical results for auto-grading in csv format as follows. For each data set, create a separate csv file to contain your answers. Make sure for full credit to use exactly these file names. A model for the file format is given in {\tt hw3-myanswers.csv}. The numbers should be in scientific format e.g. {\tt 0.12345e+1}. All logarithms should be base 10.}   
+
+{\bf a.} Get the sufficient statistics (i.e. the  counts) $n_1,\,n_2,\,\ldots \,n_m$.
+\bit
+\item[Print] (in pdf file)  $n\ssss$.
+\item[Output]({\tt csv} file)  all $n_{1:m}$.
+\eit
+{\bf b.} Let $S$ be the sample space $\{ 1,\ldots m\}$. Determine the sets $R_0,R_1,\ldots R_n$, where $R_k=\{j\in S,\,n_j=k\}$. Some of these sets will be empty; save only those which are non-empty. 
+Let $r_k=|R_k|$ and $r$ be the number of unique letters observed. Verify that $r=\sum_{k=1}^n r_k$, $m=\sum_{k=0}^nr_k$, and $n=\sum_{k=1}^n kr_k$. {\em Nothing to print or show so far.}
+Let $k^*=\max\{k,\;r_k>0\}$. In (at most 10) words, what is $R_{k*}$? 
+
+Make a stem-and-leaf plot of the fingerprint $r_k,\,k=0,\ldots$ of the data. Truncate the $k$ axis of the plot at $\min(k^*,100)$.
+
+{\bf c.}
+\bit
+\item[Print] (in pdf file)  $r_{0,1,2,3,4,5,10,100}$ and $k^*$.
+\item[Output]({\tt csv} file)  $r_{0:k^*}$ 
+\item[Save] (compute but don't show) $R_k$'s, checks on $m,n,r_{0:n}$. 
+\eit
+{\bf d.} Compute the ML estimates $\theta_{1:m}^{ML}$ 
+\bit
+\item[Print] (in pdf file) $\theta^{ML}\ssss$
+\item[Output]({\tt csv} file)  $\theta^{ML}_{1:m}$
+\eit
+{\bf e.} Compute now the Laplace estimates $\theta_{1:m}^{Lap}$ of the same
+probabilities
+\bit
+\item[Print] (in pdf file) $\theta^{Lap}\ssss$
+\item[Output]({\tt csv} file)  $\theta^{Lap}_{1:m}$
+\eit
+{\bf f.} Compute the Witten-Bell estimates $\theta_{1:m}^{WB}$ of the same probabilities.
+\bit
+\item[Print] (in pdf file) $\theta^{WB}\ssss$
+\item[Output]({\tt csv} file)  $\theta^{Wb}_{1:m}$
+\eit
+{\bf g.} Compute the Ney-Essen estimates $\theta_{1:m}^{NE}$ of the same probabilities, taking $\delta=1$.
+\bit
+\item[Print](in pdf file) $\theta^{NE}\ssss$
+\item[Output]({\tt csv} file)  $\theta^{NE}_{1:m}$
+\eit
+{\bf h.} Now use the estimates you obtained $\theta_{1:m}^{ML,Lap,WB,NE}$ to compute the
+(log-)probability of the test data.  Numerical results only for this question. 
+\bit
+\item[Print](in pdf file) log-likelihoods $\log_{10}Pr[\text{training data}|\theta_{1:m}^{Lap,WB,NE}]$
+\item[Output]({\tt csv} file) same log-likelihoods
+  \eit
+  {\bf i.} Now use the estimates you obtained $\theta_{1:m}^{ML,Lap,WB,NE}$ to compute the
+(log-)probability of the training data.  Numerical results only for this question. 
+  \bit
+  \item[Print](in pdf file) log-likelihoods $\log_{10}Pr[\text{training data}|\theta_{1:m}^{ML,Lap,WB,NE}]$
+\item[Output]({\tt csv} file) same log-likelihoods
+  \eit
+Which method gives the highest log-likelihood of the training data? Why? 
+
+{\bf j.} Which method gives the highest log-likelihood of the test data? What is the log-likeihood of $\theta_{1:m}\ML$ on the test data? Which method gives the lowest, and why?
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,223 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\addtolength{\textwidth}{4cm}
+\addtolength{\textheight}{3cm}
+\addtolength{\oddsidemargin}{-2cm}
+\addtolength{\evensidemargin}{-2cm}
+\addtolength{\topmargin}{-2cm}
+\setlength{\parskip}{1ex}
+\setlength{\parindent}{0ex}
+
+\newcommand{\comment}[1]{}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\beqa}{\begin{eqnarray}}
+\newcommand{\eeqa}{\end{eqnarray}}
+\newcommand{\bit}{\begin{itemize}}
+\newcommand{\eit}{\end{itemize}}
+\newcommand{\benum}{\begin{enumerate}}
+\newcommand{\eenum}{\end{enumerate}}
+
+\newcommand {\argmax}[2]{\mbox{\raisebox{-1.7ex}{$\stackrel{\textstyle
+ {\rm #1}}{\scriptstyle #2}$}}\,}
+\newcommand{\nchoosek}[2]{\left(\!\!\!\!\begin{array}{c}#1\\#2\end{array}\!\!\!\!\right)}
+\newcommand{\enumint}[2]{#1,\,\ldots \, #2 }
+\newcommand{\enuminti}{i\,=\,\enumint{0}{m-1}}
+\newcommand{\dataset}{{\cal D}}
+\newcommand{\fracpartial}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\tilp}{\tilde{P}}
+\newcommand{\tiltt}{\tilde{\theta}}
+\newcommand{\ML}{^{ML}}
+
+\begin{document}
+\begin{Large}
+\centerline{STAT 391} 
+\centerline{Homework 2}  % homework number here
+\centerline{Out April 12, 2022}      %due date here
+\centerline{Due April 19, 2022}      %due date here
+\end{Large}
+
+\centerline{\large \copyright Marina Meil\u{a}}
+\centerline{\large mmp@cs.washington.edu}
+
+\vspace{2em}
+{\bf[ Problem 1 -- Repeated sampling -- NOT Grade]}
+       
+A man claims to have extrasensory perception. As a test, a fair coin
+is flipped 10 times, and the man is asked to predict the outcome in
+advance. He gets 7 out of 10 correct. 
+
+\bit
+\item[a.]  Let $y$ refer to the number of correct tests, and
+   denote the outcomes of the 10 individual tests with the random
+   variables $X^1,X^2,..., X^{10}$.  What are the distributions
+   of each $X^i$?  What is the relationship
+   between $X^{1:10}$ and $Y$?   (No proof required).
+
+\item[b.] What is the probability that he would have done at least
+   this well if he had no ESP, i.e. if his guesses were essentially
+   random?  
+
+\item[c.] Suppose the test is changed -- now, the coin is flipped until the
+   man makes an incorrect guess.  He guesses the first two correctly,
+   but guesses the third wrong.  What is the probability of this
+   experimental outcome (again, assuming no ESP)?
+
+\item[d.] Assume both tests were planned beforehand.  What is the
+  probability that both of these tests turned out the way they did?
+  In other words, the plan was to first flip the coin 10 times and
+  count how many times the man is correct ($Y$) then to continue flipping
+  until the man makes the next mistake, at flip
+  $10+Z$. You are asked the probability that $Y=7$ and $Z=3$. 
+\eit
+
+
+{\bf Problem 2 -- ML estimation with two models}
+
+{\em Show your work. However, everything in the book or in class can be used without proof. E.g. you can use any ML estimation formulas from the lecture or book without proving them.}
+
+{\bf a.} The Nisqually.com company sells books A,B,C on line. Each customer buys 0 or 1 
+copy of each title. Last week the company had 10 customers visit their 
+online store. This is what the customers ordered: 
+\begin{center} 
+\begin{tabular}{ccc} 
+$A$ & $B$  & $C$\\ 
+\hline 
+1 & 0 & 0 \\ 
+1& 0& 0\\ 
+1& 0& 0 \\ 
+0& 1& 0 \\ 
+0& 1& 0\\ 
+1& 0& 0\\ 
+0& 0& 1\\ 
+0& 0& 1\\ 
+0& 0& 0\\ 
+1& 0& 0\\ 
+\hline 
+\end{tabular} 
+\end{center} 
+ 
+Estimate $\theta_A=P_A(1),\theta_B=P_B(1),\theta_C=P_C(1)$ the probabilities that a customer 
+orders books $A,B,C$ respectively by the Maximum Likelihood method. We assume that customers' decision to buy each book is independent of the decision to buy other books, i.e.
+\beq
+P_{ABC}(x_A,x_B,x_C)\,=\,P_A(x_A)P_B(x_B)P_C(x_C)
+\eeq
+
+
+{\bf b.} What is the log-likelihood $l(\theta_A\ML,\theta_B\ML,\theta_C\ML)$ of the data set above under the ML parameters estimated in {\bf a}? Numeric answer only.
+
+{\bf c.} Now we assume another (equally simplistic) customer model. Namely, that each customer buys only one book, either A,B, or C. Customers who buy nothing are not counted. This models is represented by the probability distribution $\tilp=(\tiltt_A,\tiltt_B,\tiltt_C)$  over $\tilde{S}=\{A,B,C\}$ with $\tiltt_A+\tiltt_B+\tiltt_C=1$, $\tiltt_{A,B,C}\geq 0$. 
+
+The data observed from $\tilde{n}=9$ customers is $A,A,A,B,B,A,C,C,A$ (note that this is the same data as in {\bf a}, excluding the customer who buys nothing.
+
+Estimate the parameters $\tiltt_{A,B,C}$ by the ML method.
+
+{\bf d.} What is the log-likelihood $\tilde{l}(\tiltt_A\ML,\tiltt_B\ML,\tiltt_C\ML)$ of the data set above under the ML parameters estimated in {\bf c}? Numeric answer only.
+
+{\em This exercise shows that the same data can be represented by different probabilistic models with different outcome spaces. Think whether the likelihoods $l$ and $\tilde{l}$ are comparable. The two models impose different restrictions on the data. Incidentally, this toy data set satisfies the more restrictive second model.
+
+  The first model, when it is applied to natural language, is called the \underline{Bag of Words} model, while the second model is called the \underline{Multinomial} model.}
+
+{\bf [e. Not graded]} Can you tell if the toy Language Classification experiment uses the Bag of Words model, the Multinomial, or neither?
+ 
+
+{\bf Problem 3 -- ML estimation with tied parameters}
+
+Zhenman rolls a die $n$ times, and observes a data set $\dataset$ with
+counts $n_1,\ldots n_6$. She is told that the die is not a fair one:
+the odd faces have the same probabilitly of coming up, denoted by
+$\theta_o$, the even faces also have the same probabilitly of coming
+up, denoted by $\theta_e$, but $\theta_o\neq \theta_e$, i.e. the
+distribution $P$ defined by the die is given by
+$\theta_1=\theta_3=\theta_5=\theta_o$ and
+$\theta_2=\theta_4=\theta_6=\theta_e$.
+
+{\bf a.}  Write the expression of the probability $P(3, 2, 1, 1, 6)$. What are the counts $n_{1:6}$ for this sequence of die rolls?
+
+{\bf b.} Write the expression of $l(\theta_o,\theta_e)$ the
+log-likelihood of the data $(3,2,1,1,6)$ as a function of
+$\theta_o,\theta_e$ and the counts $n_{1:6}$.
+
+{\bf c.} Now consider an arbitrary data set $\dataset$ of size $n$, with counts $n_{1:6}$. Write the expression of $l(\theta_o,\theta_e)$ for this general case as a function of the counts $n_{1:6}$. 
+
+{\bf d.} Transform $l(\theta_o,\theta_e)$ into a function of one
+variable, $l(\theta_e)$.
+
+{\bf e.} Now find the ML estimate of $\theta_e$ by equating the
+derivative of $l(\theta_e)$ with 0. 
+
+{\bf [f--Extra credit]} Explain why the result above is intuitive/not
+surprising/natural.
+
+
+{\bf Problem 4 -- ML estimation with censored data}
+
+You record $n$ samples from a Poisson distribution with rate
+parameter $\lambda$. However, due to a really poor choice of variable
+(namely, boolean), all that ends up being recorded is whether each
+sample was zero or non-zero. {\em In statistics, this is called an example of censored data.} Using only this information, and your
+knowlege of maximum likelihood estimation, what is your estimate of
+the rate parameter $\lambda$?
+
+
+{\bf Problem 5 -- The ML estimate as a random variable} 
+
+%% This problem is new but it is based on previous years' hw3 (2004, 2003?)
+
+{\em Submit the code used for this problem}
+
+Consider the coin toss experiment ($m=2$) with $\theta_1=0.3141$. The
+coin is tossed $n=100$ times, obtaining independent outcomes from
+which we estimate the parameters
+$\theta_1^{ML},\theta_0^{ML}=1-\theta_1\ML$ by the max likelihood
+method.
+
+\benum
+\item  What is the set of possible values  $S_{\theta_1}$ for $\theta_1^{ML}$ ? Does the true $\theta_1$ belong to $S_{\theta_1}$?
+
+\item 
+ Write the expression of the probability of each outcome in
+ $S_{\theta_1}$, i.e the probability that $\theta_1\ML=j/n$ for
+ $j=0,1,\ldots n$.
+
+\item \label{step:distribution}
+Make a plot of the probability distribution of
+$\theta_1\ML$. Preferably, this should be a ``stem and flower'' plot
+(the {\tt stem} function in Matlab or python) like in figure 4.2 in the book. To
+avoid numerical overflow/underflow in the computation of the
+probabilities, consider using logarithms for the intermediate
+computations. The final results should not be in logarithm form,
+however. Take figure 4.2 as an example of how your plot should look
+like.
+
+\item 
+Let $\epsilon=0.02$. Answer using the probability distribution
+computed previously (numerical answer only is OK):
+\[
+\delta_{abs}\;=\;P[|\theta_1\ML-\theta_1|>\epsilon]\;=\;?
+\]
+\[
+\delta_{rel}\;=\;P[\frac{|\theta_1\ML-\theta_1|}{\theta_1}>\epsilon]\;=\;?
+\]
+\comment{
+\item \label{step:ml} Simulate tossing the coin with $\theta_1=0.3141$
+$n=100$ times and compute $\theta_1\ML$. What is the value for
+$\theta_1\ML$ you have obtained, and what are the absolute and relative
+errors $|\theta_1\ML-\theta_1|,\,\frac{|\theta_1\ML
+-\theta_1|}{\theta_1}$?}
+\eenum
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
